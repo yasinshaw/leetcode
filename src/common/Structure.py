@@ -12,6 +12,13 @@ class ListNode:
         return self.val == o.val and self.next == o.next
 
 
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+
 def build_list(list: List[int]):
     head = ListNode(0)
     temp = head
