@@ -8,7 +8,7 @@ class Solution:
         while i >= 0 or j >= 0:
             if i >= 0 and a[i] == '1':
                 carry += 1
-            if j >= 0  and b[j] == '1':
+            if j >= 0 and b[j] == '1':
                 carry += 1
             res.append(carry % 2)
             i -= 1
