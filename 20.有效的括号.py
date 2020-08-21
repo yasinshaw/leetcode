@@ -11,16 +11,15 @@ class Solution:
             return False
         stack  = list()
         pair = {
-            "(": ")",
-            "[": "]",
-            "{": "}"
+            ")": "(",
+            "]": "[",
+            "}": "{"
         }
         for char in s:
-            if char not in pair:
-                if not stack or pair[stack[-1]] != char:
+            if char in pair:
+                if not stack or stack[-1] != pair[char]:
                     return False
-                else:
-                    stack.pop()
+                stack.pop()
             else:
                 stack.append(char)
         return not stack
