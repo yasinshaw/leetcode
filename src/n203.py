@@ -10,10 +10,10 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
+# 使用了哨兵节点
 class Solution:
     def removeElements(self, head: ListNode, val: int) -> ListNode:
-        sentinel = ListNode(0)
-        sentinel.next = head
+        sentinel = ListNode(0, head)
         cur = sentinel
         while cur and cur.next:
             if cur.next.val == val:
