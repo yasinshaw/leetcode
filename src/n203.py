@@ -12,23 +12,15 @@
 #         self.next = next
 class Solution:
     def removeElements(self, head: ListNode, val: int) -> ListNode:
-        # 先处理头结点
-        while head:
-            if head.val == val:
-                head = head.next
-            else:
-                break
-        newHead = head
-        ## 再处理其它节点
-        cur = head
+        sentinel = ListNode(0)
+        sentinel.next = head
+        cur = sentinel
         while cur and cur.next:
             if cur.next.val == val:
                 cur.next = cur.next.next
             else:
                 cur = cur.next
-        return newHead
-
-
+        return sentinel.next 
 
 # @lc code=end
 
